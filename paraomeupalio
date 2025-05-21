@@ -1,0 +1,94 @@
+const readline = require("readline-sync");
+let funcionando = true;
+
+// 🎓 1. Tela Inicial – Menu Principal
+
+while (funcionando) {
+  // console.clear();
+  console.log("===================================");
+  console.log("     🎓 SISTEMA ESCOLAR SIMPLES     ");
+  console.log("===================================");
+  console.log("1 - Cadastrar novo aluno");
+  console.log("2 - Listar alunos");
+  console.log("3 - Registrar notas");
+  console.log("4 - Ver boletim do aluno");
+  console.log("5 - Sair");
+  console.log("===================================");
+  let escolha = readline.questionInt("Escolha: ");
+
+  switch (escolha) {
+    case 1: // escolha == 1
+      // 📝 2. Tela de Cadastro de Aluno
+      console.clear();
+      console.log("===================================");
+      console.log("        🆕 CADASTRO DE ALUNO        ");
+      console.log("===================================");
+      let nomeCompleto = readline.question("Digite o nome completo:");
+      let matricula = readline.question("Digite o número de matrícula:");
+      let turma = readline.question("Digite a turma (ex: 3A, 2B):");
+      console.log("===================================");
+      readline.question("Pressione ENTER pra voltar pro MENU")
+      console.clear()
+      break;
+    case 2: // escolha == 2]
+    // 📋 3. Tela de Listagem de Alunos
+    console.clear();
+    console.log("===================================");
+    console.log("         📋 LISTA DE ALUNOS         ");
+    console.log("===================================");
+    console.log("MATRÍCULA | NOME            | TURMA");
+    console.log("-----------------------------------");
+    console.log("2023001   | Ana Souza       |  1A");
+    console.log("2023002   | João Oliveira   |  2B");
+    console.log("2023003   | Carla Martins   |  3A");
+    console.log("===================================");
+    readline.question("Pressione ENTER para voltar ao menu...");
+    console.clear();
+      break;
+    case 3: // escolha == 3
+      // ✏️ 4. Tela de Registro de Notas
+    console.clear();
+    console.log("===================================");
+    console.log("         ✏️ REGISTRAR NOTAS         ");
+    console.log("===================================");
+    let matricula_boletim = readline.question("Digite a matricula do aluno: ")
+    let notadematematica = readline.question("Digite a nota de Matemática: ");
+    let notadeportugues = readline.question("Digite a nota de Português: ");
+    let notadeciencias = readline.question("Digite a nota de Ciências: ");
+    console.log("===================================");
+    readline.question("Pressione ENTER para salvar e voltar ao MENU...");
+    console.clear();
+      break;
+    case 4: // escolha == 4
+    // 📊 5. Tela de Boletim do Aluno
+    console.clear();
+    console.log("===================================");
+    console.log("           📊 BOLETIM ESCOLAR        ");
+    console.log("===================================");
+    console.log("Nome: João Oliveira");
+    console.log("Matrícula: 2023002");
+    console.log("Turma: 2B");
+    console.log("-----------------------------------");
+    console.log("Matemática: 8.5");
+    console.log("Português: 7.0");
+    console.log("Ciências: 9.0");
+    console.log("-----------------------------------");
+    console.log("Média final: 8.2");
+    console.log("Status: APROVADO ✅");
+    console.log("===================================");
+
+    let voltar = readline.question("Pressione ENTER para voltar ao MENU...")
+    
+   console.clear();
+      break;
+    case 5: // escolha == 5
+      console.log("Saindo do sistema...");
+      funcionando = false;
+      break;
+    default:
+        console.clear(); 
+      console.log("Opção inválida. Tente novamente.");
+      readline.question("Pressione ENTER para voltar ao menu...");
+      break;
+  }
+}
