@@ -1,0 +1,88 @@
+const readline = require("readline-sync");
+let funcionando = true;
+let pneudianteiro = 150
+let oleo = 35
+let corrente = 120
+// let quantidade = ""
+// let codigo = ""
+let pecas = []
+
+/**
+ * TELAS IMPLEMENTADAS
+ * 1. Tela inicial (menu principal)
+ * 2. Tela de cadastro de peça
+ * 3. Tela de listagem de peças
+ * 4. Tela de venda
+ */
+//  🛠️ 1. Tela Inicial – Menu Principal
+
+while (funcionando) {
+   console.clear(); 
+console.log("===================================");
+console.log("   🏍️  LOJA DE PEÇAS DE MOTO  🏍️");
+console.log("===================================");
+console.log("1 - Cadastrar nova peça");
+console.log("2 - Listar peças");
+console.log("3 - Realizar venda");
+console.log("4 - Sair");
+console.log("===================================");
+
+ let escolha = readline.questionInt("Escolha: ");
+
+  switch (escolha) {
+    case 1: // escolha == 1
+     // 🧾 2. Tela de Cadastro de Peça
+console.clear();
+console.log("===================================");
+console.log("     🆕 CADASTRO DE NOVA PEÇA     ");
+console.log("===================================");
+let codigo = readline.questionInt("Digite o código da peça:");
+let nome = readline.question("Digite o nome da peca:");
+let quantidade = readline.questionInt("Digite a quantidade:");
+let valor = readline.questionFloat("Digite o valor:");
+let peca = {codigo, nome, quantidade, valor} 
+pecas.push(peca)
+console.log("===================================");
+readline.question("Pressione ENTER para salvar...");
+    break;
+    case 2:
+console.clear();
+console.log("===================================");
+console.log("         📋 LISTA DE PEÇAS         ");
+console.log("===================================");
+console.log("COD | NOME           | PREÇO | QTD");
+console.log("-----------------------------------");
+console.log("001 | Pneu Dianteiro | 150.00 | 10");
+console.log("002 | Óleo 20W50     |  35.00 | 25");
+console.log("003 | Corrente       | 120.00 | 5 ");
+console.log("===================================");
+
+readline.question("Pressione ENTER para voltar ao menu...");
+    break;
+    case 3:
+// 💸 4. Tela de Venda
+//console.clear();
+console.log("===================================");
+console.log("          💸 VENDA DE PEÇAS        ");
+console.log("===================================");
+
+
+
+// if (codigo == 1 || codigo == 2 || codigo == 3) {
+
+// quantidade = readline.questionInt("Digite a quantidade desejada:");
+
+// } else {console.log("Por favor, digite um código valido")
+// }
+    break;
+    case 4: // escolha == 4
+      console.log("Saindo do sistema...");
+      funcionando = false;
+      break;
+    default:
+        console.clear(); 
+      console.log("Opção inválida. Tente novamente.");
+      readline.question("Pressione ENTER para voltar ao menu...");
+      break;
+  }
+}
